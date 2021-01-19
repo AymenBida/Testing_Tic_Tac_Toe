@@ -37,8 +37,10 @@ describe Board do
       expect(table.valid_position?(3)).to be false
     end
   end
+
   describe '#apply_move' do
     let(:player) { instance_double(Player, { name: 'texas', letter: 'X' }) }
+
     it 'should  place the move of the player on the board' do
       expect { table.apply_move(3, player) }.to change { table.board[2] }.to('X')
     end
