@@ -1,4 +1,5 @@
 require_relative '../lib/board.rb'
+require_relative '../lib/player.rb'
 
 describe Board do
   subject(:table) { described_class.new }
@@ -34,6 +35,12 @@ describe Board do
     it "sould return false when the board position with the index equal to move (-1) is a not a space" do
       table.board = ['X', 'O', 'X', 'O', 'X', ' ', 'X', 'O', 'X']
       expect(table.valid_position?(3)).to be false
+    end
+  end
+  describe '#apply_move' do
+    let(:player) {instance_double(Player, {name: 'texas' , letter: 'X'})}
+    it 'should  place the move of the player on the board' do
+     expect {table.apply_move(3,player)}.to change {table.board[2]}.to('X')
     end
   end
 end
