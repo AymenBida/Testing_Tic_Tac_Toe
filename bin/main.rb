@@ -52,7 +52,6 @@ loop do
   elsif b.draw?
     break
   end
-
   puts "\n#{player2.name}, it's your move\n"
   puts 'invalid move! please enter a number between 1 and 9' until b.make_move?(gets.chomp.to_i, player2)
   system('clear')
