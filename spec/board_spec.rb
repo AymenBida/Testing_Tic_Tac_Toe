@@ -45,4 +45,42 @@ describe Board do
       expect { table.apply_move(3, player) }.to change { table.board[2] }.to('X')
     end
   end
+
+  describe '#increase_moves_counter' do
+    it 'should increment the moves by one when the method is called' do
+      expect{table.increase_moves_counter}.to change {table.moves}.by(1)
+    end
+  end
+  describe '#test_win' do
+    let(:player) { instance_double(Player, { name: 'texas', letter: 'X' }) }
+    let(:player2) { instance_double(Player, { name: 'arizona', letter: 'O' }) }
+    it 'should return true if one of the win cases is available' do
+      table.apply_move(1, player)
+      table.apply_move(2, player2)
+      table.apply_move(5, player)
+      table.apply_move(3, player2)
+      table.apply_move(9, player)
+      expect(table.test_win).to be true
+    end
+
+    it 'should return false if none of the win cases is available' do
+      table.apply_move(4, player)
+      table.apply_move(2, player2)
+      table.apply_move(5, player)
+      table.apply_move(3, player2)
+      table.apply_move(9, player)
+      expect(table.test_win).to be false
+    end
+  end
+  describe '#draw?' do
+    it 'should return true when the moves are equal to 9' do
+      table.moves=9
+      expect(table.draw?).to be true
+    end
+
+    it 'should return false when the moves are different than 9' do
+      table.moves=5
+      expect(table.draw?).to be false
+    end
+  end
 end
