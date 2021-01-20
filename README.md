@@ -42,7 +42,7 @@ To get a local copy up and running follow these simple example steps in your ter
 
 - GitHub: [@ZawadiSumba66](https://github.com/ZawadiSumba66)
 - Twitter: [@zawadirose1](https://twitter.com/zawadirose1)
-- LinkedIn: [@Rose](https://www.linkedin.com/in/rose-sumba-9b36401b5/
+- LinkedIn: [@Rose](https://www.linkedin.com/in/rose-sumba-9b36401b5/)
 
 ## 🤝 Contributing
 
